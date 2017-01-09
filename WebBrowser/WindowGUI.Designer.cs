@@ -34,16 +34,29 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.homepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setAsHomepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editHomepageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.favouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTofavouritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backBtn = new System.Windows.Forms.Button();
             this.forwardBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.homepageBtn = new System.Windows.Forms.Button();
             this.addressBar = new System.Windows.Forms.TextBox();
-            this.bookmarkBtn = new System.Windows.Forms.Button();
+            this.favouriteBtn = new System.Windows.Forms.Button();
             this.historyBtn = new System.Windows.Forms.Button();
             this.goBtn = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.switchViewBtn = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.favouritesLbl = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.addfavouriteBtn = new System.Windows.Forms.Button();
+            this.editfavouriteBtn = new System.Windows.Forms.Button();
+            this.deletefavouriteBtn = new System.Windows.Forms.Button();
             this.tabController = new System.Windows.Forms.CustomTabControl();
             this.addTabBtn = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
@@ -55,7 +68,10 @@
             this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.homepageToolStripMenuItem,
+            this.favouritesToolStripMenuItem,
+            this.historyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(921, 33);
@@ -74,16 +90,70 @@
             // newTabToolStripMenuItem
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(203, 30);
-            this.newTabToolStripMenuItem.Text = "New Tab";
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.newTabToolStripMenuItem.Text = "New Tab Ctrl + T";
             this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
             // newWindowToolStripMenuItem
             // 
             this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(203, 30);
-            this.newWindowToolStripMenuItem.Text = "New Window";
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.newWindowToolStripMenuItem.Text = "New Window Ctrl + N";
             this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.newWindowToolStripMenuItem_Click);
+            // 
+            // homepageToolStripMenuItem
+            // 
+            this.homepageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setAsHomepageToolStripMenuItem,
+            this.editHomepageToolStripMenuItem});
+            this.homepageToolStripMenuItem.Name = "homepageToolStripMenuItem";
+            this.homepageToolStripMenuItem.Size = new System.Drawing.Size(113, 29);
+            this.homepageToolStripMenuItem.Text = "Homepage";
+            // 
+            // setAsHomepageToolStripMenuItem
+            // 
+            this.setAsHomepageToolStripMenuItem.Enabled = false;
+            this.setAsHomepageToolStripMenuItem.Name = "setAsHomepageToolStripMenuItem";
+            this.setAsHomepageToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.setAsHomepageToolStripMenuItem.Text = "Set As Homepage";
+            this.setAsHomepageToolStripMenuItem.Click += new System.EventHandler(this.setAsHomepageToolStripMenuItem_Click);
+            // 
+            // editHomepageToolStripMenuItem
+            // 
+            this.editHomepageToolStripMenuItem.Name = "editHomepageToolStripMenuItem";
+            this.editHomepageToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.editHomepageToolStripMenuItem.Text = "Edit Homepage Ctrl + H";
+            this.editHomepageToolStripMenuItem.Click += new System.EventHandler(this.editHomepageToolStripMenuItem_Click);
+            // 
+            // favouritesToolStripMenuItem
+            // 
+            this.favouritesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addTofavouritesToolStripMenuItem});
+            this.favouritesToolStripMenuItem.Name = "favouritesToolStripMenuItem";
+            this.favouritesToolStripMenuItem.Size = new System.Drawing.Size(104, 29);
+            this.favouritesToolStripMenuItem.Text = "Favourites";
+            // 
+            // addTofavouritesToolStripMenuItem
+            // 
+            this.addTofavouritesToolStripMenuItem.Name = "addTofavouritesToolStripMenuItem";
+            this.addTofavouritesToolStripMenuItem.Size = new System.Drawing.Size(239, 30);
+            this.addTofavouritesToolStripMenuItem.Text = "Add To Favourites";
+            this.addTofavouritesToolStripMenuItem.Click += new System.EventHandler(this.addTofavouritesToolStripMenuItem_Click);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearHistoryToolStripMenuItem});
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(86, 29);
+            this.historyToolStripMenuItem.Text = "History ";
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(323, 30);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History Ctrl + Shift + H";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
             // 
             // backBtn
             // 
@@ -138,6 +208,7 @@
             this.homepageBtn.AutoSize = true;
             this.homepageBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.homepageBtn.BackColor = System.Drawing.Color.Transparent;
+            this.homepageBtn.Enabled = false;
             this.homepageBtn.FlatAppearance.BorderSize = 0;
             this.homepageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homepageBtn.Image = ((System.Drawing.Image)(resources.GetObject("homepageBtn.Image")));
@@ -150,29 +221,33 @@
             // 
             // addressBar
             // 
+            this.addressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.addressBar.BackColor = System.Drawing.Color.White;
             this.addressBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressBar.Location = new System.Drawing.Point(278, 54);
+            this.addressBar.Location = new System.Drawing.Point(271, 45);
             this.addressBar.Name = "addressBar";
             this.addressBar.Size = new System.Drawing.Size(377, 35);
             this.addressBar.TabIndex = 7;
+            this.addressBar.TextChanged += new System.EventHandler(this.addressBarTextChanged);
             this.addressBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addressBar_KeyDown);
             // 
-            // bookmarkBtn
+            // favouriteBtn
             // 
-            this.bookmarkBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bookmarkBtn.AutoSize = true;
-            this.bookmarkBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bookmarkBtn.BackColor = System.Drawing.Color.Transparent;
-            this.bookmarkBtn.FlatAppearance.BorderSize = 0;
-            this.bookmarkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bookmarkBtn.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkBtn.Image")));
-            this.bookmarkBtn.Location = new System.Drawing.Point(747, 42);
-            this.bookmarkBtn.Name = "bookmarkBtn";
-            this.bookmarkBtn.Size = new System.Drawing.Size(38, 38);
-            this.bookmarkBtn.TabIndex = 8;
-            this.bookmarkBtn.UseVisualStyleBackColor = false;
-            this.bookmarkBtn.Click += new System.EventHandler(this.bookmarkBtn_Click);
+            this.favouriteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.favouriteBtn.AutoSize = true;
+            this.favouriteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.favouriteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.favouriteBtn.FlatAppearance.BorderSize = 0;
+            this.favouriteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.favouriteBtn.Image = ((System.Drawing.Image)(resources.GetObject("favouriteBtn.Image")));
+            this.favouriteBtn.Location = new System.Drawing.Point(747, 42);
+            this.favouriteBtn.Name = "favouriteBtn";
+            this.favouriteBtn.Size = new System.Drawing.Size(38, 38);
+            this.favouriteBtn.TabIndex = 8;
+            this.favouriteBtn.UseVisualStyleBackColor = false;
+            this.favouriteBtn.Click += new System.EventHandler(this.favouriteBtn_Click);
             // 
             // historyBtn
             // 
@@ -188,6 +263,7 @@
             this.historyBtn.Size = new System.Drawing.Size(38, 38);
             this.historyBtn.TabIndex = 9;
             this.historyBtn.UseVisualStyleBackColor = false;
+            this.historyBtn.Click += new System.EventHandler(this.historyBtn_Click);
             // 
             // goBtn
             // 
@@ -228,6 +304,78 @@
             this.switchViewBtn.UseVisualStyleBackColor = false;
             this.switchViewBtn.Click += new System.EventHandler(this.switchViewBtn_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox1.BackColor = System.Drawing.Color.White;
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 29;
+            this.listBox1.Location = new System.Drawing.Point(724, 142);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(181, 149);
+            this.listBox1.TabIndex = 14;
+            this.listBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseClick);
+            this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
+            // 
+            // favouritesLbl
+            // 
+            this.favouritesLbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.favouritesLbl.AutoSize = true;
+            this.favouritesLbl.Location = new System.Drawing.Point(720, 108);
+            this.favouritesLbl.Name = "favouritesLbl";
+            this.favouritesLbl.Size = new System.Drawing.Size(83, 20);
+            this.favouritesLbl.TabIndex = 15;
+            this.favouritesLbl.Text = "Favourites";
+            // 
+            // addfavouriteBtn
+            // 
+            this.addfavouriteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addfavouriteBtn.AutoSize = true;
+            this.addfavouriteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addfavouriteBtn.FlatAppearance.BorderSize = 0;
+            this.addfavouriteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addfavouriteBtn.Image = ((System.Drawing.Image)(resources.GetObject("addfavouriteBtn.Image")));
+            this.addfavouriteBtn.Location = new System.Drawing.Point(738, 294);
+            this.addfavouriteBtn.Name = "addfavouriteBtn";
+            this.addfavouriteBtn.Size = new System.Drawing.Size(22, 22);
+            this.addfavouriteBtn.TabIndex = 16;
+            this.addfavouriteBtn.UseVisualStyleBackColor = true;
+            this.addfavouriteBtn.Click += new System.EventHandler(this.addTofavouritesToolStripMenuItem_Click);
+            // 
+            // editfavouriteBtn
+            // 
+            this.editfavouriteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editfavouriteBtn.AutoSize = true;
+            this.editfavouriteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.editfavouriteBtn.FlatAppearance.BorderSize = 0;
+            this.editfavouriteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editfavouriteBtn.Image = ((System.Drawing.Image)(resources.GetObject("editfavouriteBtn.Image")));
+            this.editfavouriteBtn.Location = new System.Drawing.Point(797, 294);
+            this.editfavouriteBtn.Name = "editfavouriteBtn";
+            this.editfavouriteBtn.Size = new System.Drawing.Size(22, 22);
+            this.editfavouriteBtn.TabIndex = 17;
+            this.editfavouriteBtn.UseVisualStyleBackColor = true;
+            this.editfavouriteBtn.Click += new System.EventHandler(this.editfavouriteBtn_Click);
+            // 
+            // deletefavouriteBtn
+            // 
+            this.deletefavouriteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deletefavouriteBtn.AutoSize = true;
+            this.deletefavouriteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.deletefavouriteBtn.FlatAppearance.BorderSize = 0;
+            this.deletefavouriteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deletefavouriteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deletefavouriteBtn.Image")));
+            this.deletefavouriteBtn.Location = new System.Drawing.Point(857, 294);
+            this.deletefavouriteBtn.Name = "deletefavouriteBtn";
+            this.deletefavouriteBtn.Size = new System.Drawing.Size(22, 22);
+            this.deletefavouriteBtn.TabIndex = 18;
+            this.deletefavouriteBtn.UseVisualStyleBackColor = true;
+            this.deletefavouriteBtn.Click += new System.EventHandler(this.deletefavouriteBtn_Click);
+            // 
             // tabController
             // 
             this.tabController.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -258,17 +406,16 @@
             this.tabController.Location = new System.Drawing.Point(12, 108);
             this.tabController.Name = "tabController";
             this.tabController.SelectedIndex = 0;
-            this.tabController.Size = new System.Drawing.Size(897, 208);
+            this.tabController.Size = new System.Drawing.Size(687, 208);
             this.tabController.TabIndex = 12;
             this.tabController.Click += new System.EventHandler(this.tabSelect);
-            this.tabController.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabControl_KeyDown);
             // 
             // addTabBtn
             // 
             this.addTabBtn.Location = new System.Drawing.Point(4, 34);
             this.addTabBtn.Name = "addTabBtn";
             this.addTabBtn.Padding = new System.Windows.Forms.Padding(3);
-            this.addTabBtn.Size = new System.Drawing.Size(889, 170);
+            this.addTabBtn.Size = new System.Drawing.Size(679, 170);
             this.addTabBtn.TabIndex = 1;
             this.addTabBtn.Text = "Add Tab";
             this.addTabBtn.UseVisualStyleBackColor = true;
@@ -280,21 +427,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(921, 328);
+            this.Controls.Add(this.deletefavouriteBtn);
+            this.Controls.Add(this.editfavouriteBtn);
+            this.Controls.Add(this.addfavouriteBtn);
+            this.Controls.Add(this.favouritesLbl);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.switchViewBtn);
             this.Controls.Add(this.tabController);
             this.Controls.Add(this.goBtn);
             this.Controls.Add(this.historyBtn);
-            this.Controls.Add(this.bookmarkBtn);
+            this.Controls.Add(this.favouriteBtn);
             this.Controls.Add(this.addressBar);
             this.Controls.Add(this.homepageBtn);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.forwardBtn);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "WindowGUI";
             this.Text = "Web Browser";
-            this.SizeChanged += new System.EventHandler(this.screenResize);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.WindowGUI_KeyDown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabController.ResumeLayout(false);
@@ -313,13 +466,26 @@
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button homepageBtn;
         public System.Windows.Forms.TextBox addressBar;
-        private System.Windows.Forms.Button bookmarkBtn;
+        private System.Windows.Forms.Button favouriteBtn;
         private System.Windows.Forms.Button historyBtn;
         private System.Windows.Forms.Button goBtn;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.CustomTabControl tabController;
         private System.Windows.Forms.TabPage addTabBtn;
         private System.Windows.Forms.Button switchViewBtn;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label favouritesLbl;
+        private System.Windows.Forms.ToolStripMenuItem homepageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setAsHomepageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editHomepageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem favouritesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addTofavouritesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button addfavouriteBtn;
+        private System.Windows.Forms.Button editfavouriteBtn;
+        private System.Windows.Forms.Button deletefavouriteBtn;
+        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
     }
 }
 

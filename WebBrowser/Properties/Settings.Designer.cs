@@ -25,7 +25,7 @@ namespace WebBrowser.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://www.google.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://google.co.uk")]
         public string HomePage {
             get {
                 return ((string)(this["HomePage"]));

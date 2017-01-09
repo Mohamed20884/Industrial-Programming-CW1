@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="HomePage" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://www.google.com</Value>
+      <Value Profile="(Default)">http://google.co.uk</Value>
     </Setting>
   </Settings>
 </SettingsFile>
